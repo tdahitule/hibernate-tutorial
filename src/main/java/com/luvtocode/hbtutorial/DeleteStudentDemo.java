@@ -15,7 +15,7 @@ public class DeleteStudentDemo {
 		Session session = factory.getCurrentSession();
 		try {
 			session.beginTransaction();
-			Student theStudent = (Student) session.createQuery("from Student where dateOfBirth='Sagar'").getSingleResult();
+			Student theStudent = (Student) session.createQuery("from Student where dateOfBirth='03/06/1994'").getSingleResult();
 			
 			System.out.println(theStudent);
 			session.delete(theStudent);

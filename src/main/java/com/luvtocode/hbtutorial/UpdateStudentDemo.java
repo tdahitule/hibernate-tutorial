@@ -1,6 +1,8 @@
 package com.luvtocode.hbtutorial;
 import static com.luvtocode.hbtutorial.utility.SessionFactoryUtils.getSessionFactory;
 
+import java.util.Date;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
@@ -15,7 +17,7 @@ public class UpdateStudentDemo {
 			session.beginTransaction();
 			Student theStudent = (Student) session.createQuery("from Student where firstName='Tushar'").getSingleResult();
 			
-			theStudent.setEmail("mr.dtushar@gmail.com");
+			theStudent.setDateOfBirth(new Date("30/3/1992"));
 			session.getTransaction().commit();
 		} finally {
 			session.close();
